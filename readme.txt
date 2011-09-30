@@ -1,10 +1,10 @@
 === Genesis Single Post Navigation ===
 Contributors: daveshine
 Donate link: http://genesisthemes.de/en/donate/
-Tags: genesis, genesiswp, single post, navigation, browse, next, previous, next post, previous post, style
+Tags: genesis, genesiswp, genesis framework, single post, navigation, browse, next, previous, next post, previous post, style
 Requires at least: 3.0.0
-Tested up to: 3.2.1
-Stable tag: 1.1
+Tested up to: 3.3-aortic-dissection
+Stable tag: 1.2
 
 Plugin adds next & prev nav links on single posts to have a "browse post by post nav style". Use of Genesis Theme Framework is required.
 
@@ -13,11 +13,18 @@ This small and lightweight plugin adds next & previous navigation links on singl
 
 In the css file a Media Query setting was added to avoid the display of these browse links on screens/ viewports with a width smaller than 1024px. You can edit this via CSS, see FAQ.
 
-Please note: The plugin requires the [Genesis Theme Framework](http://deckerweb.de/go/genesis/) (aff link)
+=Please note: The plugin requires the [Genesis Theme Framework](http://deckerweb.de/go/genesis/)= (aff link)
 
-[A plugin from deckerweb.de and GenesThemes](http://genesisthemes.de/en/)
+= Localization =
+* English (default) - always included
+* German - always included
+* Your translation? - [Just send it in](http://genesisthemes.de/en/contact/)
 
-[See my other plugins](http://genesisthemes.de/en/wp-plugins/) or see [my WordPress.org profile page](http://profiles.wordpress.org/users/daveshine/)
+[A plugin from deckerweb.de and GenesisThemes](http://genesisthemes.de/en/)
+
+* [*GenesisFinder* - Find then create. Your Genesis Framework Search Engine.](http://genesisfinder.com/)
+* Please support me by [following on Twitter](http://twitter.com/#!/deckerweb) and [my Facebook page](http://www.facebook.com/deckerweb.service) - Thank you! ;-)
+* [Also see my other plugins](http://genesisthemes.de/en/wp-plugins/) or see [my WordPress.org profile page](http://profiles.wordpress.org/users/daveshine/)
 
 == Installation ==
 1. Upload `genesis-single-post-navigation` folder to the `/wp-content/plugins/` directory
@@ -42,17 +49,41 @@ Again, that's possible! Just the same procedure as above! Look for the documente
 = Can I change the link string? =
 Yes, it's possible of course but that requires some knowledge of the WordPress functions for `previous_post_link()` and `next_post_link()`. The function is documented in the [WordPress Codex](http://codex.wordpress.org/Template_Tags/next_post_link). - Please note: Changing functions in the php file of this plugin can lead to errors on the site or complete crashing of the site! So you should only edit if you really know what you are doing! And please make BACKUPs before editing anything! (Note: I am not responsible for crashed sites by false editing!)
 
-== Upgrade Notice ==
-If you have a cache plugin running in WordPress, it's recommended to delete/ clear the cache just after upgrading the plugin.
-
 == Screenshots ==
 1. Adding browse next & previous links to single posts of Genesis-powered blogs - 1st example: included default style for light backgrounds
 2. Adding browse next & previous links to single posts of Genesis-powered blogs - 2nd example: user customized stylesheet for dark backgrounds
 
 == Changelog ==
+= 1.2 =
+* Optimized CSS3 Media Query: only display the links for displays of 1100px width or bigger
+* Added checks for activated Genesis Framework and its minimum version before allowing plugin to activate
+* Added plugin update nag in WP Admin with advice for existing CSS customizations to be backuped/saved
+* Added localization for the whole plugin, which is pretty much the plugin description section and all messages in WP Admin
+* Added German translations (plus English included by default)
+* For translators: added .pot file to the download package (gspn.pot in /languages/)
+* Improved and documented plugin code
+* Tested & proved compatibility with WordPress 3.3-aortic-dissection :-)
+
 = 1.1 =
 * Added CSS3 Media Query to load only for bigger displays/ viewports
 * Optimized and documented the stylesheet
 
 = 1.0 =
 * Initial release
+
+== Upgrade Notice ==
+If you have a cache plugin running in WordPress, it's recommended to delete/ clear the cache just after upgrading the plugin.
+
+= 1.2 =
+Several changes - Optimzed media query, added activation checks and localization and further improved code and documentation.
+
+= 1.1 =
+Minor changes - Added CSS3 Media Query to load only for bigger displays/ viewports, optimized and documented the stylesheet.
+
+= 1.0 =
+Just released into the wild.
+
+== Translations ==
+
+* English - default, always included
+* Deutsch - immer dabei! Download auch via: http://deckerweb.de/material/sprachdateien/genesis-plugins/#genesis-single-post-navigation
