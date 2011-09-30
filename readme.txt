@@ -11,9 +11,9 @@ Plugin adds next & prev nav links on single posts to have a "browse post by post
 == Description ==
 This small and lightweight plugin adds next & previous navigation links on single posts to have some kind of a browse post by post nav style. Using the WordPress core function for previous and next post links these links only appear on single posts. The browsing is chronological. Some blog authors prefer to have such a style to offer their readers some feeling of "book reading..." So the plugin might add some nice effect :). Styling with CSS is possible, please see under FAQ here!
 
-In the css file a Media Query setting was added to avoid the display of these browse links on screens/ viewports with a width smaller than 1024px. You can edit this via CSS, see FAQ.
+In the css file a Media Query setting was added to avoid the display of these browse links on screens/ viewports with a width smaller than 1100px. You can edit this via CSS, see FAQ.
 
-=Please note: The plugin requires the [Genesis Theme Framework](http://deckerweb.de/go/genesis/)= (aff link)
+Please note: The plugin requires the [Genesis Theme Framework](http://deckerweb.de/go/genesis/) (aff link)
 
 = Localization =
 * English (default) - always included
@@ -86,4 +86,4 @@ Just released into the wild.
 == Translations ==
 
 * English - default, always included
-* Deutsch - immer dabei! Download auch via: http://deckerweb.de/material/sprachdateien/genesis-plugins/#genesis-single-post-navigation
+* Deutsch - immer dabei! [Download auch via deckerweb.de Sprachdateien](http://deckerweb.de/material/sprachdateien/genesis-plugins/#genesis-single-post-navigation)
