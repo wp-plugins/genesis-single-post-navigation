@@ -13,7 +13,7 @@ This small and lightweight plugin adds next & previous navigation links on singl
 
 In the css file a Media Query setting was added to avoid the display of these browse links on screens/ viewports with a width smaller than 1100px. You can edit this via CSS, see FAQ.
 
-Please note: The plugin requires the [Genesis Theme Framework](http://deckerweb.de/go/genesis/) (aff link)
+Please note: The plugin requires the Genesis Theme Framework.
 
 = Localization =
 * English (default) - always included
@@ -86,4 +86,4 @@ Just released into the wild.
 == Translations ==
 
 * English - default, always included
-* Deutsch - immer dabei! [Download auch via deckerweb.de Sprachdateien](http://deckerweb.de/material/sprachdateien/genesis-plugins/#genesis-single-post-navigation)
+* German: Deutsch - immer dabei! [Download auch via deckerweb.de Sprachdateien](http://deckerweb.de/material/sprachdateien/genesis-plugins/#genesis-single-post-navigation)
