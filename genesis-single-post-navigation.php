@@ -9,7 +9,7 @@
  * Plugin Name: Genesis Single Post Navigation
  * Plugin URI: http://genesisthemes.de/en/wp-plugins/genesis-single-post-navigation/
  * Description: This plugin adds next & previous navigation links on single posts to have some kind of a browse post by post nav style. The plugin requires the use of the Genesis Theme Framework.
- * Version: 1.2
+ * Version: 1.3
  * Author: David Decker - DECKERWEB
  * Author URI: http://deckerweb.de/
  * License: GPLv2
@@ -74,15 +74,16 @@ function gspn_truncate( $str, $length=10 ) {
     return $res;
 }
 
-add_action( 'wp_print_styles', 'genesis_single_post_navigation_stylesheet' );
+add_action( 'wp_enqueue_scripts', 'genesis_single_post_navigation_stylesheet' );
 /**
  * Enqueue single post navigation stylesheet
  * 
  * @since 1.0
+ * @version 1.1
  */
 function genesis_single_post_navigation_stylesheet() {
 
-	wp_enqueue_style( 'genesis_single_post_navigation', plugins_url( '/css/single-post-navigation.css', __FILE__ ), false, '1.2', 'screen' );
+	wp_enqueue_style( 'genesis_single_post_navigation', plugins_url( '/css/single-post-navigation.css', __FILE__ ), false, '1.3', 'screen' );
 
 }
 

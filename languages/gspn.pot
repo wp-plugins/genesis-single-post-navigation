@@ -58,7 +58,7 @@ msgstr ""
 #. translators: plugin header field 'Version'
 #: genesis-single-post-navigation.php:0
 #@ gspn
-msgid "1.2"
+msgid "1.3"
 msgstr ""
 
 #: genesis-single-post-navigation.php:173

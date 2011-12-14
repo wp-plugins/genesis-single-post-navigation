@@ -1,10 +1,10 @@
 === Genesis Single Post Navigation ===
 Contributors: daveshine
 Donate link: http://genesisthemes.de/en/donate/
-Tags: genesis, genesiswp, genesis framework, single post, navigation, browse, next, previous, next post, previous post, style
-Requires at least: 3.0.0
-Tested up to: 3.3-aortic-dissection
-Stable tag: 1.2
+Tags: genesis, genesiswp, genesis framework, single post, navigation, browse, next, previous, next post, previous post, style, deckerweb
+Requires at least: 3.2
+Tested up to: 3.3
+Stable tag: 1.3
 
 Plugin adds next & prev nav links on single posts to have a "browse post by post nav style". Use of Genesis Theme Framework is required.
 
@@ -54,6 +54,11 @@ Yes, it's possible of course but that requires some knowledge of the WordPress f
 2. Adding browse next & previous links to single posts of Genesis-powered blogs - 2nd example: user customized stylesheet for dark backgrounds
 
 == Changelog ==
+= 1.3 =
+* Fixed possible enqueue issue with stylesheet: replaced deprecated hook with new standard.
+* Updated German translations and also the .pot file for all translators!
+* Tested & proved compatibility with WordPress 3.3 final release :-)
+
 = 1.2 =
 * Optimized CSS3 Media Query: only display the links for displays of 1100px width or bigger
 * Added checks for activated Genesis Framework and its minimum version before allowing plugin to activate
@@ -74,6 +79,9 @@ Yes, it's possible of course but that requires some knowledge of the WordPress f
 == Upgrade Notice ==
 If you have a cache plugin running in WordPress, it's recommended to delete/ clear the cache just after upgrading the plugin.
 
+= 1.3 =
+Important change: improved compatibility with WordPress 3.3+.
+
 = 1.2 =
 Several changes - Optimzed media query, added activation checks and localization and further improved code and documentation.
 
@@ -86,4 +94,4 @@ Just released into the wild.
 == Translations ==
 
 * English - default, always included
-* German: Deutsch - immer dabei! [Download auch via deckerweb.de Sprachdateien](http://deckerweb.de/material/sprachdateien/genesis-plugins/#genesis-single-post-navigation)
+* German: Deutsch - immer dabei! [Download auch via deckerweb.de](http://deckerweb.de/material/sprachdateien/genesis-plugins/#genesis-single-post-navigation)
