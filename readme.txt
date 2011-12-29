@@ -22,9 +22,15 @@ Please note: The plugin requires the Genesis Theme Framework.
 
 [A plugin from deckerweb.de and GenesisThemes](http://genesisthemes.de/en/)
 
-* [*GenesisFinder* - Find then create. Your Genesis Framework Search Engine.](http://genesisfinder.com/)
-* Please support me by [following on Twitter](http://twitter.com/#!/deckerweb) and [my Facebook page](http://www.facebook.com/deckerweb.service) - Thank you! ;-)
+= Feedback =
+* I am open for your suggestions and feedback - Thank you for using or trying out one of my plugins!
+* Drop me a line [@deckerweb](http://twitter.com/#!/deckerweb) on Twitter
+* Follow me on [my Facebook page](http://www.facebook.com/deckerweb.service)
+* Or follow me on [@David Decker](http://deckerweb.de/gplus) on Google Plus ;-)
+
+= More =
 * [Also see my other plugins](http://genesisthemes.de/en/wp-plugins/) or see [my WordPress.org profile page](http://profiles.wordpress.org/users/daveshine/)
+* Tip: [*GenesisFinder* - Find then create. Your Genesis Framework Search Engine.](http://genesisfinder.com/)
 
 == Installation ==
 1. Upload `genesis-single-post-navigation` folder to the `/wp-content/plugins/` directory
@@ -54,6 +60,11 @@ Yes, it's possible of course but that requires some knowledge of the WordPress f
 2. Adding browse next & previous links to single posts of Genesis-powered blogs - 2nd example: user customized stylesheet for dark backgrounds
 
 == Changelog ==
+= 1.4 =
+* Added plugin resource links on plugin list page
+* Minor code tweaks (improved namespacing for functions etc.)
+* Updated German translations and also the .pot file for all translators!
+
 = 1.3 =
 * Fixed possible enqueue issue with stylesheet: replaced deprecated hook with new standard.
 * Updated German translations and also the .pot file for all translators!
@@ -77,7 +88,8 @@ Yes, it's possible of course but that requires some knowledge of the WordPress f
 * Initial release
 
 == Upgrade Notice ==
-If you have a cache plugin running in WordPress, it's recommended to delete/ clear the cache just after upgrading the plugin.
+= 1.4 =
+Several changes - Minor code tweaks. Added plugin resource links to plugin page. Further updated German translations and .pot file for translators.
 
 = 1.3 =
 Important change: improved compatibility with WordPress 3.3+.
@@ -95,3 +107,5 @@ Just released into the wild.
 
 * English - default, always included
 * German: Deutsch - immer dabei! [Download auch via deckerweb.de](http://deckerweb.de/material/sprachdateien/genesis-plugins/#genesis-single-post-navigation)
+
+Note: All my plugins are localized/ translateable by default. This is very important for all users worldwide. So please contribute your language to the plugin to make it even more useful. For translating I recommend the awesome ["Codestyling Localization" plugin](http://wordpress.org/extend/plugins/codestyling-localization/) and for validating the ["Poedit Editor"](http://www.poedit.net/).
