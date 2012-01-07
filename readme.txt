@@ -3,8 +3,8 @@ Contributors: daveshine
 Donate link: http://genesisthemes.de/en/donate/
 Tags: genesis, genesiswp, genesis framework, single post, navigation, browse, next, previous, next post, previous post, style, deckerweb
 Requires at least: 3.2
-Tested up to: 3.3
-Stable tag: 1.3
+Tested up to: 3.3.1
+Stable tag: 1.4
 
 Plugin adds next & prev nav links on single posts to have a "browse post by post nav style". Use of Genesis Theme Framework is required.
 
@@ -13,12 +13,16 @@ This small and lightweight plugin adds next & previous navigation links on singl
 
 In the css file a Media Query setting was added to avoid the display of these browse links on screens/ viewports with a width smaller than 1100px. You can edit this via CSS, see FAQ.
 
+Finally, since version 1.4 of the plugin you can reverse the link direction via defining a little constant in your child theme. Please see the [FAQ section here](http://wordpress.org/extend/plugins/genesis-single-post-navigation/faq/) for more info on that.
+
+Also since version 1.4 of the plugin you can customize the possible parameters of the previous/next post links - these are the same parameters the WordPress functions offers :-). Again, please see [FAQ section here](http://wordpress.org/extend/plugins/genesis-single-post-navigation/faq/) for more info on that!
+
 Please note: The plugin requires the Genesis Theme Framework.
 
 = Localization =
 * English (default) - always included
 * German - always included
-* Your translation? - [Just send it in](http://genesisthemes.de/en/contact/)
+* *Your translation? - [Just send it in](http://genesisthemes.de/en/contact/)*
 
 [A plugin from deckerweb.de and GenesisThemes](http://genesisthemes.de/en/)
 
@@ -26,7 +30,7 @@ Please note: The plugin requires the Genesis Theme Framework.
 * I am open for your suggestions and feedback - Thank you for using or trying out one of my plugins!
 * Drop me a line [@deckerweb](http://twitter.com/#!/deckerweb) on Twitter
 * Follow me on [my Facebook page](http://www.facebook.com/deckerweb.service)
-* Or follow me on [@David Decker](http://deckerweb.de/gplus) on Google Plus ;-)
+* Or follow me on [+David Decker](http://deckerweb.de/gplus) on Google Plus ;-)
 
 = More =
 * [Also see my other plugins](http://genesisthemes.de/en/wp-plugins/) or see [my WordPress.org profile page](http://profiles.wordpress.org/users/daveshine/)
@@ -44,16 +48,69 @@ Don't panic. It's just some css styling - look at the next questions on how you 
 (The plugin comes only with one pre-defined style so it cannot fit with any site by default. Thank you for your understanding!)
 
 = Can I change the color of the links and/or the link hover behaviour? =
-Yes, you can! Just edit the `single-post-navigation.css` file in the plugin folder `/genesis-single-post-navigation/css/`. Edit the link styles as documented in the stylesheet. (Just note that after any plugin update you have to do this again so never forget to make a BACKUP of your files to easily revert to the plugin's default!)
+Yes, you can!
+
+*First alternative (highly recommended!):* Just look in the packaged CSS file `single-post-navigation.css` to find out the CSS selectors and rules and then overwrite them via your child theme. In most cases you then have to apply them by adding an `!important` to the appropiate rule. -- Big advantage of this alternative: it's update secure!
+
+*First alternative (highly recommended!):* You might edit the `single-post-navigation.css` file in the plugin folder `/genesis-single-post-navigation/css/`. Edit the link styles as documented in the stylesheet. (Just note that after any plugin update you have to do this again so never forget to make a BACKUP of your files to easily revert to the plugin's default!)
 
 = Can I remove or change the styling of the tiny border lines? =
-Yes, of course! Just the same procedure as above! Look for the documented style settings in the css file.
+Yes, of course! Just the same procedure as above! Look for the documented style settings in the css file. - The alternative via child theme is always recommended :)
 
 = Can I adjust the media query for another display size (or even various sizes) because my site or content width is bigger/ smaller? =
-Again, that's possible! Just the same procedure as above! Look for the documented style settings in the css file.
+Again, that's possible! Just the same procedure as above! Look for the documented style settings in the css file. - The alternative via child theme is always recommended :)
 
-= Can I change the link string? =
-Yes, it's possible of course but that requires some knowledge of the WordPress functions for `previous_post_link()` and `next_post_link()`. The function is documented in the [WordPress Codex](http://codex.wordpress.org/Template_Tags/next_post_link). - Please note: Changing functions in the php file of this plugin can lead to errors on the site or complete crashing of the site! So you should only edit if you really know what you are doing! And please make BACKUPs before editing anything! (Note: I am not responsible for crashed sites by false editing!)
+= Can I swap/reverse the direction of the browsing links? =
+Finally, this is now possible since version 1.4 of the plugin :). You only have to add one little line of code (a constant) to the functions.php file of your child theme. (Only add this if you really want to change the direction, if not then just DO NOT add it!) Please add the following code:
+`/**
+ * Genesis Single Post Navigation: Reverse link direction
+ */
+define( 'GSPN_REVERSE_LINK_DIRECTION', 'reverse_direction' );`
+
+*Please note:* This leads to changing the general direction of the links, really book-like ("next post link" on the right side, "previous post link" on the left side). It also will lead to reversed arrows (the linked strings) so you now might also add the custom parameters like explained below in next FAQ entry:
+
+= Can I customize the link string, set to only in the same category and can I exclude categories? =
+Yes, this is now possible since version 1.4 of the plugin via custom filters which you can add to your functions.php file of the current theme or child theme. -- There's one filter function for each of the two - "previous post link" and "next post link":
+
+**Changing parameters for "previous post link":**
+`add_filter( 'gspn_previous_post_link', 'custom_gspn_previous_link' );
+/**
+ * Genesis Single Post Navigation: Add custom filters for "previous post link"
+ */
+function custom_gspn_previous_link() {
+
+	$args = array (
+		'format'                => '%link',     // Change link format (default: %link)
+		'link'                  => '&raquo;',   // Change link string (default: &raquo;)
+		'in_same_cat'           => FALSE,       // Apply only to same category (default: FALSE)
+		'excluded_categories'   => ''           // Exclude categories (default: empty)
+	);
+
+	previous_post_link( $args['format'], $args['link'], $args['in_same_cat'], $args['excluded_categories'] );
+}`
+[You can also get this code from GitHub Gist here](https://gist.github.com/1576197) // See also [WordPress codex for info on the four possible parameters...](http://codex.wordpress.org/Template_Tags/previous_post_link)
+
+If you reversed the link direction (see above FAQ entry) you might change the link string here to: `&laquo;`
+
+**Changing parameters for "next post link":**
+`add_filter( 'gspn_next_post_link', 'custom_gspn_next_link' );
+/**
+ * Genesis Single Post Navigation: Add custom filters for "next post link"
+ */
+function custom_gspn_next_link() {
+
+	$args = array (
+		'format'                => '%link',     // Change link format (default: %link)
+		'link'                  => '&laquo;',   // Change link string (default: &laquo;)
+		'in_same_cat'           => FALSE,       // Apply only to same category (default: FALSE)
+		'excluded_categories'   => ''           // Exclude categories (default: empty)
+	);
+
+	next_post_link( $args['format'], $args['link'], $args['in_same_cat'], $args['excluded_categories'] );
+}`
+[You can also get this code from GitHub Gist here](https://gist.github.com/1576203) // See also [WordPress codex for info on the four possible parameters...](http://codex.wordpress.org/Template_Tags/next_post_link)
+
+If you reversed the link direction (see above FAQ entry) you might change the link string here to: `&raquo;`
 
 == Screenshots ==
 1. Adding browse next & previous links to single posts of Genesis-powered blogs - 1st example: included default style for light backgrounds
@@ -61,8 +118,12 @@ Yes, it's possible of course but that requires some knowledge of the WordPress f
 
 == Changelog ==
 = 1.4 =
+* *Finally:* Added possibility to reverse the link direction via a constant added to the child theme - [please see FAQ section here for more info](http://wordpress.org/extend/plugins/genesis-single-post-navigation/faq/)
+* Added filters to the plugin which allow now to change the parameters for "previous post link" and "next post link" - all of the 4 parameters for the WordPress template tags/functions could be used - [please see FAQ here here for more info](http://wordpress.org/extend/plugins/genesis-single-post-navigation/faq/) - *Note:* This requires v1.4 or higher of this plugin!
+* General code tweaks, also improved code documentation for newly added filters
+* Added new rules for the customizations to CSS file, improved documentation and code standards
 * Added plugin resource links on plugin list page
-* Minor code tweaks (improved namespacing for functions etc.)
+* Enhanced and improved readme.txt file with more info, documention and FAQ entries for customizing the parameters
 * Updated German translations and also the .pot file for all translators!
 
 = 1.3 =
@@ -89,7 +150,7 @@ Yes, it's possible of course but that requires some knowledge of the WordPress f
 
 == Upgrade Notice ==
 = 1.4 =
-Several changes - Minor code tweaks. Added plugin resource links to plugin page. Further updated German translations and .pot file for translators.
+Major changes and improvements - Added filters and constants for customizations via child theme. Added plugin resource links to plugin page. Some general code and documentation tweaks, also minor tweaks in CSS file. Furthermore, updated readme.txt file and also .pot file for translators together with German translations.
 
 = 1.3 =
 Important change: improved compatibility with WordPress 3.3+.
@@ -108,4 +169,4 @@ Just released into the wild.
 * English - default, always included
 * German: Deutsch - immer dabei! [Download auch via deckerweb.de](http://deckerweb.de/material/sprachdateien/genesis-plugins/#genesis-single-post-navigation)
 
-Note: All my plugins are localized/ translateable by default. This is very important for all users worldwide. So please contribute your language to the plugin to make it even more useful. For translating I recommend the awesome ["Codestyling Localization" plugin](http://wordpress.org/extend/plugins/codestyling-localization/) and for validating the ["Poedit Editor"](http://www.poedit.net/).
+*Note:* All my plugins are localized/ translateable by default. This is very important for all users worldwide. So please contribute your language to the plugin to make it even more useful. For translating I recommend the awesome ["Codestyling Localization" plugin](http://wordpress.org/extend/plugins/codestyling-localization/) and for validating the ["Poedit Editor"](http://www.poedit.net/).

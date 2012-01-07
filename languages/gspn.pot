@@ -1,5 +1,6 @@
-# Copyright (C) 2011 Genesis Single Post Navigation by David Decker of deckerweb.de
+# Copyright (C) 2011-2012 Genesis Single Post Navigation by David Decker of deckerweb.de
 # This file is distributed under the same license as the Genesis Single Post Navigation package.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Genesis Single Post Navigation Plugin\n"
@@ -55,15 +56,42 @@ msgstr ""
 msgid "Sorry, you can&rsquo;t activate without %1$sGenesis Framework %2$s%3$s or greater"
 msgstr ""
 
-#. translators: plugin header field 'Version'
-#: genesis-single-post-navigation.php:0
-#@ gspn
-msgid "1.3"
-msgstr ""
-
 #: genesis-single-post-navigation.php:173
 #, php-format
 #@ gspn
-msgid "Plugin <a href=\"http://genesisthemes.de/en/wp-plugins/genesis-single-post-navigation/\" target=\"_new\">%s v%s</a> is available! <a href=\"%s\">You can update now</a>. <strong>Please backup and safe your <em style=\"color: red;\">existing</em> CSS customizations before!</strong><br /><em>Thanks for using that plugin! &mdash;David Decker, plugin developer</em>"
+msgid "Plugin <a href=\"http://genesisthemes.de/en/wp-plugins/genesis-single-post-navigation/\" target=\"_new\">%s v%s</a> is available! <a href=\"%s\">You can update now</a>. <strong>Please backup and save your <em style=\"color: red;\">existing</em> CSS customizations before!</strong><br /><em>Thanks for using that plugin! &mdash;David Decker, plugin developer</em>"
 msgstr ""
+
+#. translators: plugin header field 'Description'
+#: genesis-single-post-navigation.php:0
+#@ gspn
+msgid "This plugin adds next & previous navigation links on single posts to have some kind of a browse post by post nav style. You can customize link direction and some parameters via your child theme. The plugin requires the use of the Genesis Theme Framework."
+msgstr ""
+
+#. translators: plugin header field 'Version'
+#: genesis-single-post-navigation.php:0
+#@ gspn
+msgid "1.4"
+msgstr ""
+
+#: genesis-single-post-navigation.php:101
+#@ gspn
+msgid "FAQ"
+msgstr ""
+
+#: genesis-single-post-navigation.php:102
+#@ gspn
+msgid "Support"
+msgstr ""
+
+#: genesis-single-post-navigation.php:103
+#@ gspn
+msgid "http://genesisthemes.de/en/donate/"
+msgstr ""
+
+#: genesis-single-post-navigation.php:103
+#@ gspn
+msgid "Donate"
+msgstr ""
+
 
