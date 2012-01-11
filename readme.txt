@@ -17,7 +17,7 @@ Finally, since version 1.4 of the plugin you can reverse the link direction via 
 
 Also since version 1.4 of the plugin you can customize the possible parameters of the previous/next post links - these are the same parameters the WordPress functions offers :-). Again, please see [FAQ section here](http://wordpress.org/extend/plugins/genesis-single-post-navigation/faq/) for more info on that!
 
-**Please note:** The plugin requires the Genesis Theme Framework.
+**Please note:** This plugin requires the Genesis Theme Framework.
 
 = Localization =
 * English (default) - always included
