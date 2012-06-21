@@ -160,9 +160,9 @@ function custom_gspn_filter_next_post_string() {
 	return __( 'Custom next post:', 'your-child-theme-text-domain' );
 }
 `
-`
 
-**gspn_filter_previous_post_tooltip** (the whole tooltip, including `get_adjacent_post()` function!)
+**gspn_filter_previous_post_tooltip**
+ (the whole tooltip, including `get_adjacent_post()` function!)
 
 * Default value: 'Previous post:' PLUS title of previous post
 * Example code:
@@ -177,7 +177,8 @@ function custom_gspn_previous_post_tooltip_output() {
 `
 Note, for parameters of the `get_adjacent_post()` function, see [the WordPress Codex](http://codex.wordpress.org/Function_Reference/get_adjacent_post)
 
-**gspn_filter_next_post_tooltip** (the whole tooltip, including `get_adjacent_post()` function!)
+**gspn_filter_next_post_tooltip**
+ (the whole tooltip, including `get_adjacent_post()` function!)
 
 * Default value: 'Next post:' PLUS title of next post
 * Example code:
